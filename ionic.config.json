@@ -1,0 +1,7 @@
+{
+  "name": "images-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
