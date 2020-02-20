@@ -12,6 +12,7 @@ export class HomePage implements OnInit {
 
   dataFromService: any = "";
   url: any = "../../assets/data.json";
+  images: any = [];
   constructor(public http: HttpClient, private toastController: ToastController) {}
 
   ngOnInit(){
@@ -23,6 +24,9 @@ export class HomePage implements OnInit {
    this.ParseData().subscribe((dataReturnFromService) => {
    this.dataFromService = JSON.stringify(dataReturnFromService);
    console.log(this.dataFromService);
+   for (let i = 0; i < dataReturnFromService.length; i++) {
+   this.images.push(dataReturnFromService[i])
+}
    }, error => { console.log('oops', error);
   this.GetToast('Something went Wrong');
   });

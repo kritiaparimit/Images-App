@@ -1,20 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar color = "primary">
-    <ion-title style="color: #FFFFFF; font-size: 20px; padding:left: 32px">
+    <ion-title style="color: #FFFFFF; font-size: 20px; padding-left: 32px">
       Dashboard
     </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
-<ion-row style="padding-top: 16px">
-  <ion-col col-3>
-    <img id="profilephoto" src="/assets/coffee.jpeg" alt="" />
+<ion-row style="padding-top: 8px" >
+  <ion-col col-3 *ngFor="let image of images">
+    <img id="profilephoto" src = {{image.url}} alt="" />
   </ion-col>
-  <!-- <ion-col>
-    <img id="profilephoto" src="/assets/coffee.jpeg" alt="" />
-  </ion-col>
-  <ion-col>
-    <img id="profilephoto" src="/assets/coffee.jpeg" alt="" />
-  </ion-col> -->
 </ion-row>
 </ion-content>

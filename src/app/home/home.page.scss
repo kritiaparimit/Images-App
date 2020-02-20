@@ -33,7 +33,6 @@ ion-content ion-toolbar {
   border-radius: 10% !important;
   overflow: hidden;
   height: auto;
-  max-width: 100px;
-  max-height: 100px;
-  height: auto;
+  min-width: 100px;
+  min-height: 200px;
   }
