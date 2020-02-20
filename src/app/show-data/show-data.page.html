@@ -1,4 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title style="color: #B0171F; font-size: 20px; padding-left: 32px">
+      Image Details
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
 <ion-grid style="background: #f4f5f8">
+  <ion-slides class="image-slider" loop="true" slidesPerView="5">
+    <ion-slide *ngFor="let image of images">
+      <img src={{image.url}} class="thumb-img"/>
+    </ion-slide>
+  </ion-slides>
 <div
 class="break"
 id = "text"
@@ -29,3 +43,4 @@ style="font-size: 12px;color: #B0B0B0; padding-left: 8px"
 </ion-col>
 </ion-row>
 </ion-grid>
+</ion-content>

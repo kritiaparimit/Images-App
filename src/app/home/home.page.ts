@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ToastController } from '@ionic/angular';
+import { ToastController, ModalController } from '@ionic/angular';
 import { Observable } from 'rxjs'
-
+import { ShowDataPage } from '../show-data/show-data.page';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -13,7 +13,8 @@ export class HomePage implements OnInit {
   dataFromService: any = "";
   url: any = "../../assets/data.json";
   images: any = [];
-  constructor(public http: HttpClient, private toastController: ToastController) {}
+  constructor(public http: HttpClient, private toastController: ToastController,
+    private modal: ModalController) {}
 
   ngOnInit(){
     this.GetImages();
@@ -43,5 +44,15 @@ export class HomePage implements OnInit {
    ParseData(): Observable<any> {
     console.log('get json');
     return this.http.get(this.url);
+}
+async OpenOfferModal(){
+  const Modal = await this.modal.create({component: ShowDataPage, cssClass: "filter-modal"});
+Modal.onDidDismiss()
+  .then((data) => {
+    console.log(data);
+    if (data !== null) {
+  }
+});
+return await Modal.present();
 }
 }       
